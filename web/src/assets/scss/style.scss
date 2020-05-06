@@ -1,0 +1,280 @@
+@import './variables';
+// 样式重置
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  line-height: 1;
+  font-family:Arial,Helvetica,sans-serif; 
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+  text-decoration: none;
+}
+del {
+
+  text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+// 颜色
+html {
+  background-color: map-get($map: $colors, $key: "grey-2");
+}
+
+@each $colorKey, $colorVal in $colors {
+  .text-#{$colorKey} {
+    color: $colorVal
+  }
+  .bg-#{$colorKey} {
+    background-color: $colorVal;
+  }
+}
+;
+
+// 文本
+// text-align0
+
+// text-overflow
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.text-ellipsis-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var !important;
+  }
+}
+// font-size 
+@each $fzKey, $fzVal in $font-sizes {
+  .fz-#{$fzKey} {
+    font-size: $fzVal * $base-font-size;
+  }
+}
+;
+// width height
+.w-100 {
+  width: 100%;
+}
+;
+.h-100 {
+  height: 100%;
+}
+;
+
+
+// flex布局
+.d-flex {
+  display: flex;
+}
+;
+.flex-column {
+  flex-direction: column;
+}
+;
+.flex-wrap {
+  flex-wrap: wrap;
+}
+;
+.jc-end {
+  justify-content: flex-end;
+}
+
+@each $Key, $Val in $flex-jc {
+  .jc-#{$Key} {
+    justify-content: $Val;
+  }
+}
+;
+
+@each $Key, $Val in $flex-ai {
+  .ai-#{$Key} {
+    align-items: $Val;
+  }
+}
+;
+.flex-1 {
+  flex: 1;
+}
+;
+.flex-grow-1 {
+  flex-grow: 1;
+}
+;
+
+// 边距  spacing
+@each $typeKey, $typeVal in $spacing-types {
+
+  // .m-1
+  @each $sizeKey, $sizeVal in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$typeVal}: $sizeVal* $spacing-base-size;
+    }
+  }
+
+  // .mx-1 .my-1
+  @each $sizeKey, $sizeVal in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$typeVal}-left: $sizeVal* $spacing-base-size;
+      #{$typeVal}-right: $sizeVal* $spacing-base-size;
+    }
+    ;
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$typeVal}-top: $sizeVal* $spacing-base-size;
+      #{$typeVal}-bottom: $sizeVal* $spacing-base-size;
+    }
+  }
+
+  // .mt-1
+  @each $direKey, $direVal in $spacing-directions {
+    @each $sizeKey, $sizeVal in $spacing-sizes {
+      .#{$typeKey}#{$direKey}-#{$sizeKey} {
+        #{$typeVal}-#{$direVal}: $sizeVal* $spacing-base-size;
+      }
+    }
+  }
+}
+;
+
+
+// borders 边框
+@each $dir in (top, right, bottom, left) {
+  .border-#{$dir} {
+    border-#{$dir}: solid 1px $border-color;
+  }
+}
+
+// button 按钮
+
+.btn {
+  border: none;
+  border-radius: 0.1538rem;
+  font-size: map-get($font-sizes, 'xxs') * $base-font-size;
+  padding: 0.2rem 0.4rem;
+  &.lg-btn {
+    width: 10.3rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: map-get($map: $colors, $key: 'white');
+    border: 1px solid $border-color;
+    border-radius: 0.2rem;
+    background: map-get($map: $colors, $key: 'btn-color');
+    .iconfont {
+      font-size: 1.3rem;
+      color: map-get($map: $colors, $key: 'primary');
+    }
+  }
+
+}
+
+// nav
+.nav {
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    &.active {
+      // & 表示他本身 黄色字体黄色下划线
+      color: map-get($map: $colors, $key: 'primary');
+      border-bottom-color: map-get($map: $colors, $key: 'primary');
+    }
+  }
+  ;
+  &.nav-inverse {
+    // 白色下划线 白色下划线
+    .nav-item {
+      color: map-get($colors, 'white');
+    }
+    ;
+    .active {
+      border-bottom-color: map-get($colors, 'white');
+    }
+    ;
+  }
+  ;
+}
+
+
+// sprite 精灵
+.sprite {
+  background: url('../images/index.png') no-repeat 0 0;
+  background-size: 28.8462rem;
+  display: inline-block;
+  &.sprite-news {
+    background-position: 63.546% 15.517%;
+    width: 1.7692rem;
+    height: 1.5385rem;
+  }
+  &.sprite-arrow {
+    background-position: 38.577% 52.076%;
+    width: 1.4615rem;
+    height: 1.4615rem;
+  }
+  &.sprite-logo {
+    background-position: 0 72.588%;
+    width: 2.3077rem;
+    height: 2.3077rem;
+  }
+}
+
+
+// 吸顶效果
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}

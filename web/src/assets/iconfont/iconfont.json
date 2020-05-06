@@ -1,0 +1,58 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1010145",
+      "name": "新闻",
+      "font_class": "xinwen",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "6654507",
+      "name": "card-hero",
+      "font_class": "card-hero",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "7273886",
+      "name": "更多",
+      "font_class": "gengduo",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    },
+    {
+      "icon_id": "9228466",
+      "name": "视频",
+      "font_class": "shipin",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "10166345",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "11224507",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e6d4",
+      "unicode_decimal": 59092
+    },
+    {
+      "icon_id": "13694996",
+      "name": "图文",
+      "font_class": "tuwen",
+      "unicode": "e700",
+      "unicode_decimal": 59136
+    }
+  ]
+}

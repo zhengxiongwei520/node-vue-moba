@@ -1,0 +1,56 @@
+// 颜色
+$colors: ("primary": #db9e3f,
+  "nav-bg":#c1a26e,
+  "title":#4394e4,
+  "blue-1":#00ADFF,
+  "yellow":#805300,
+  "danger":#791a16,
+  "yellow-1":#33332c,
+  "blue":#1f3694,
+  "info":#4b67af,
+  "white":#fff,
+  "light":#f9f9f9,
+  "light-1":#d4d9de,
+  "btn-color":#fcfcfc,
+  "border-rgiht":#d7d7d7,
+  "grey":#999,
+  "grey-1":#666,
+  "grey-2":#ededed,
+  "grey-3":#9fa0a0,
+  "grey-4":#e6e6e6,
+  "grey-5":#e4e4e4,
+  "grey-6":#a2a2a2,
+  "dark-1":#343440,
+  "dark":#222,
+  "black": #000);
+
+$border-color:map-get($map: $colors, $key: "light-1");
+// 文本
+// font-size 
+$base-font-size:1rem;
+$font-sizes:(xxs:0.6154, // 8px
+  xs:0.7692, // 10px
+  ssm:0.8462, // 11px
+  sm:0.9231, // 12px  
+  md:1, // 13px
+  lg:1.0769, // 14px
+  xl:1.2308 // 16px
+);
+
+// flex布局
+$flex-jc:("start":flex-start,
+  "end":flex-end,
+  "center":center,
+  "between":space-between,
+  "around":space-around);
+
+$flex-ai:("start":flex-start,
+  "end":flex-end,
+  "center":center,
+  "stretch":stretch);
+
+// 边距  spacing
+$spacing-types:("m":margin, "p":padding);
+$spacing-directions:(t:top, r:right, b:bottom, l:left);
+$spacing-base-size:1rem;
+$spacing-sizes:(0:0, 1:0.25, 2:0.5, 3:1, 4:1.5, 5:3);
