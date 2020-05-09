@@ -70,7 +70,7 @@ module.exports = app => {
   function postUpload(uploadWhere) {
     return app.post(`/admin/api/upload/${uploadWhere}`, authMiddleWare(), upload(uploadWhere).single('file'), async (req, res) => {
       const file = req.file
-      file.url = `http://moba.bearer.top/admin/api/upload/${uploadWhere}/${file.filename}`
+      file.url = `http://localhost:3000/admin/api/upload/${uploadWhere}/${file.filename}`
       res.send(file)
     })
   }
